@@ -1,10 +1,8 @@
-import {ActionTree} from 'vuex';
-import {IArtistState} from '@/store/modules/artist/IArtistState';
-import {IRootState} from '@/store/IRootState';
 import {Artist, IArtist, IArtistApi} from '@s0me1/musicevents-core';
-import {ArtistMutation} from '@/store/modules/artist/mutations';
+import {ArtistMutation} from './mutations';
+import {IArtistActions} from './IArtistActions';
 
-export const createArtistActions: (artistApi: IArtistApi) => ActionTree<IArtistState, IRootState> = (artistApi: IArtistApi) => ({
+export const createArtistActions: (artistApi: IArtistApi) => IArtistActions = (artistApi: IArtistApi) => ({
   async fetchArtists({commit}): Promise<void> {
     try {
       const artists: IArtist[] = await artistApi.getAll();
