@@ -1,4 +1,4 @@
-import {IArtist} from '@s0me1/musicevents-core';
+import {IArtist, IArtistApi} from '@s0me1/musicevents-core';
 
 export const generateArtists = (count: number) => {
   const artists: IArtist[] = [];
@@ -19,3 +19,46 @@ export const generateArtists = (count: number) => {
   return artists;
 };
 
+export const createMockArtistApi: () => IArtistApi = () => {
+  const artists = generateArtists(10);
+
+  return {
+    async get(id: string) {
+      const artist = artists.find(a => a.id === id);
+      if (!artist) {
+        throw new Error('Artist not found');
+      }
+      return artist;
+    },
+    async getAll(): Promise<IArtist[]> {
+      return artists;
+    },
+    async markFavourite(id: string) {
+      const artistIndex = artists.findIndex(a => a.id === id);
+      if (artistIndex === -1) {
+        throw new Error('Artist not found');
+      }
+      artists[artistIndex] = {
+        ...artists[artistIndex],
+        favourite: true,
+      };
+    },
+    async unmarkFavourite(id: string) {
+      const artistIndex = artists.findIndex(a => a.id === id);
+      if (artistIndex === -1) {
+        throw new Error('Artist not found');
+      }
+      artists[artistIndex] = {
+        ...artists[artistIndex],
+        favourite: false,
+      };
+    },
+    async find(artistName: string) {
+      return artists.filter(a => a.name.indexOf(artistName) !== -1);
+    },
+    async search(artistName: string) {
+      return artists.filter(a => a.name.indexOf(artistName) !== -1)
+        .map(a => ({name: a.name}));
+    },
+  };
+};
