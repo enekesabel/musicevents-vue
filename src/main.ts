@@ -7,7 +7,8 @@ import App from './App.vue';
 import router from './router';
 import Vuex from 'vuex';
 import axios from 'axios';
-import VueMaterial from 'vue-material';
+// tslint:disable-next-line
+const VueMaterial = require('vue-material').default;
 import {
   DummyArtistApi,
   DummyEventApi,
