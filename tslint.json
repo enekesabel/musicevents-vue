@@ -9,14 +9,28 @@
     ]
   },
   "rules": {
+    "no-increment-decrement": [
+      false
+    ],
     "object-curly-spacing": [
       false
     ],
-    "ter-indent": [
+    "max-line-length": [
       true,
-      "tab",
-      1
+      180
     ],
-    "import-name": [false]
+    "import-name": [
+      false
+    ],
+    "align": [
+      false,
+      "arguments"
+    ],
+    "function-name": [
+      true,
+      {
+        "method-regex": "^[\\[a-zA-Z][\\.\\]\\w\\d]+$"
+      }
+    ]
   }
 }
