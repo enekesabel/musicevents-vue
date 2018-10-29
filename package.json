@@ -9,7 +9,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "@s0me1/musicevents-core": "^1.0.5",
+    "@s0me1/musicevents-core": "^1.0.6",
     "axios": "^0.18.0",
     "vue": "^2.5.17",
     "vue-class-component": "^6.0.0",

@@ -15,10 +15,13 @@ export const createArtistActions: (artistApi: IArtistApi) => IArtistActions = (a
   async markFavourite({commit}, artist: IArtist): Promise<void> {
     try {
       await artistApi.markFavourite(artist.id);
-      commit(ArtistMutation.SET_ARTIST, new Artist({
+
+      const newArtist = new Artist({
         ...artist.serialize(),
         favourite: true,
-      }));
+      });
+
+      commit(ArtistMutation.SET_ARTIST, newArtist);
     } catch (e) {
       console.log(e);
     }
