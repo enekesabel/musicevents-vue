@@ -1,10 +1,8 @@
-import {ActionTree} from 'vuex';
-import {IEventState} from '@/store/modules/event/IEventState';
-import {IRootState} from '@/store/IRootState';
 import {Event, IEvent, IEventApi} from '@s0me1/musicevents-core';
-import {EventMutation} from '@/store/modules/event/mutations';
+import {EventMutation} from './mutations';
+import {IEventActions} from './IEventActions';
 
-export const createEventActions: (eventApi: IEventApi) => ActionTree<IEventState, IRootState> = (eventApi: IEventApi) => ({
+export const createEventActions: (eventApi: IEventApi) => IEventActions = (eventApi: IEventApi) => ({
   async fetchEvents({commit}): Promise<void> {
     try {
       const events: IEvent[] = await eventApi.getAll();
