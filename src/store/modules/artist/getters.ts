@@ -1,9 +1,7 @@
-import {GetterTree} from 'vuex';
-import {IArtistState} from '@/store/modules/artist/IArtistState';
-import {IRootState} from '@/store/IRootState';
 import {IArtist} from '@s0me1/musicevents-core';
+import {IArtistGetters} from '@/store/modules/artist/IArtistGetters';
 
-export const getters: GetterTree<IArtistState, IRootState> = {
+export const getters: IArtistGetters = {
   favouriteArtists(state): IArtist[] {
     return state.artists.filter(a => a.favourite);
   },
