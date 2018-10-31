@@ -21,9 +21,18 @@
                             <md-icon class="mr-2">search</md-icon>
                         </md-autocomplete>
                     </div>
-                    <md-button class="md-icon-button d-sm-none">
-                        <md-icon>more_vert</md-icon>
-                    </md-button>
+                    <div class="d-sm-none">
+                        <md-menu md-direction="bottom-end">
+                            <md-button md-menu-trigger
+                                       class="md-icon-button">
+                                <md-icon>more_vert</md-icon>
+                            </md-button>
+
+                            <md-menu-content>
+                                <md-menu-item>Search artists</md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
                 </div>
             </div>
 
