@@ -22,14 +22,17 @@
                         </md-autocomplete>
                     </div>
                     <div class="d-sm-none">
-                        <md-menu md-direction="bottom-end">
+                        <md-menu md-size="big" md-direction="bottom-end">
                             <md-button md-menu-trigger
                                        class="md-icon-button">
                                 <md-icon>more_vert</md-icon>
                             </md-button>
 
                             <md-menu-content>
-                                <md-menu-item>Search artists</md-menu-item>
+                                <md-menu-item>
+                                    <span>Search artists</span>
+                                    <md-icon>search</md-icon>
+                                </md-menu-item>
                             </md-menu-content>
                         </md-menu>
                     </div>
