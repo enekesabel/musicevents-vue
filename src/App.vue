@@ -41,9 +41,10 @@
 
             <div class="d-none d-sm-block">
                 <div class="md-toolbar-row">
-                    <md-tabs class="md-primary">
-                        <md-tab id="tab-home" md-label="My Artists"></md-tab>
-                        <md-tab id="tab-pages" md-label="My Events"></md-tab>
+                    <md-tabs class="md-primary" md-sync-route>
+                        <md-tab id="tab-home" md-label="Home" to="/"></md-tab>
+                        <md-tab id="tab-artists" md-label="My Artists" to="/artists"></md-tab>
+                        <md-tab id="tab-events" md-label="My Events" to="/events"></md-tab>
                     </md-tabs>
                 </div>
             </div>
@@ -51,6 +52,10 @@
 
         <md-app-drawer :md-active.sync="menuVisible">
             <md-list>
+                <md-list-item>
+                    <md-icon>recent_actors</md-icon>
+                    <span class="md-list-item-text">Home</span>
+                </md-list-item>
                 <md-list-item>
                     <md-icon>recent_actors</md-icon>
                     <span class="md-list-item-text">My Artists</span>
@@ -64,51 +69,8 @@
         </md-app-drawer>
 
         <md-app-content>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
+            <router-view>
+            </router-view>
         </md-app-content>
     </md-app>
 </template>
