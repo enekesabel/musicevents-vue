@@ -1,5 +1,5 @@
 <template>
-    <md-app md-waterfall md-mode="fixed-last">
+    <md-app md-waterfall md-mode="fixed-last" class="md-app">
         <md-app-toolbar class="md-dense md-primary">
             <div class="md-toolbar-row">
                 <div class="md-toolbar-section-start">
@@ -52,16 +52,16 @@
 
         <md-app-drawer :md-active.sync="menuVisible">
             <md-list>
-                <md-list-item>
+                <md-list-item :to="{name: Routes.HOME}">
                     <md-icon>recent_actors</md-icon>
                     <span class="md-list-item-text">Home</span>
                 </md-list-item>
-                <md-list-item>
+                <md-list-item :to="{name: Routes.ARTIST_LIST}">
                     <md-icon>recent_actors</md-icon>
                     <span class="md-list-item-text">My Artists</span>
                 </md-list-item>
 
-                <md-list-item>
+                <md-list-item :to="{name: Routes.EVENT_LIST}">
                     <md-icon>event_note</md-icon>
                     <span class="md-list-item-text">My Events</span>
                 </md-list-item>
@@ -77,4 +77,8 @@
 <script lang="ts" src="./App.ts"/>
 <style lang="scss">
     @import './assets/styles/index';
+
+    .md-app {
+        height: 100vh;
+    }
 </style>
