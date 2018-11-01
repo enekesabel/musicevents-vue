@@ -3,7 +3,9 @@
         <md-app-toolbar class="md-dense md-primary">
             <div class="md-toolbar-row">
                 <div class="md-toolbar-section-start">
-                    <md-button class="md-icon-button d-sm-none" @click="drawerVisible = !drawerVisible">
+                    <md-button v-if="isMobile"
+                               class="md-icon-button"
+                               @click="drawerVisible = !drawerVisible">
                         <md-icon>menu</md-icon>
                     </md-button>
 
@@ -11,7 +13,8 @@
                 </div>
 
                 <div class="md-toolbar-section-end">
-                    <div class="d-none d-sm-flex">
+                    <div v-if="!isMobile"
+                         class="d-none d-sm-flex">
                         <md-autocomplete
                                 class="search"
                                 v-model="selectedArtist"
@@ -21,7 +24,7 @@
                             <md-icon class="mr-2">search</md-icon>
                         </md-autocomplete>
                     </div>
-                    <div class="d-sm-none">
+                    <div v-if="isMobile">
                         <md-menu md-size="big" md-direction="bottom-end">
                             <md-button md-menu-trigger
                                        class="md-icon-button">
@@ -39,14 +42,13 @@
                 </div>
             </div>
 
-            <div class="d-none d-sm-block">
-                <div class="md-toolbar-row">
-                    <md-tabs class="md-primary" md-sync-route>
-                        <md-tab id="tab-home" md-label="Home" to="/"></md-tab>
-                        <md-tab id="tab-artists" md-label="My Artists" to="/artists"></md-tab>
-                        <md-tab id="tab-events" md-label="My Events" to="/events"></md-tab>
-                    </md-tabs>
-                </div>
+            <div v-if="!isMobile"
+                 class="md-toolbar-row">
+                <md-tabs class="md-primary" md-sync-route>
+                    <md-tab id="tab-home" md-label="Home" to="/"></md-tab>
+                    <md-tab id="tab-artists" md-label="My Artists" to="/artists"></md-tab>
+                    <md-tab id="tab-events" md-label="My Events" to="/events"></md-tab>
+                </md-tabs>
             </div>
         </md-app-toolbar>
 
