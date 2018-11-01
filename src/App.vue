@@ -3,7 +3,7 @@
         <md-app-toolbar class="md-dense md-primary">
             <div class="md-toolbar-row">
                 <div class="md-toolbar-section-start">
-                    <md-button class="md-icon-button d-sm-none" @click="menuVisible = !menuVisible">
+                    <md-button class="md-icon-button d-sm-none" @click="drawerVisible = !drawerVisible">
                         <md-icon>menu</md-icon>
                     </md-button>
 
@@ -50,18 +50,21 @@
             </div>
         </md-app-toolbar>
 
-        <md-app-drawer :md-active.sync="menuVisible">
+        <md-app-drawer :md-active.sync="drawerVisible">
             <md-list>
-                <md-list-item :to="{name: Routes.HOME}">
+                <md-list-item :to="{name: Routes.HOME}"
+                              @click="closeDrawer">
                     <md-icon>recent_actors</md-icon>
                     <span class="md-list-item-text">Home</span>
                 </md-list-item>
-                <md-list-item :to="{name: Routes.ARTIST_LIST}">
+                <md-list-item :to="{name: Routes.ARTIST_LIST}"
+                              @click="closeDrawer">
                     <md-icon>recent_actors</md-icon>
                     <span class="md-list-item-text">My Artists</span>
                 </md-list-item>
 
-                <md-list-item :to="{name: Routes.EVENT_LIST}">
+                <md-list-item :to="{name: Routes.EVENT_LIST}"
+                              @click="closeDrawer">
                     <md-icon>event_note</md-icon>
                     <span class="md-list-item-text">My Events</span>
                 </md-list-item>
