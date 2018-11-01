@@ -1,9 +1,10 @@
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import Component, {mixins} from 'vue-class-component';
 import {Routes} from '@/router/routes';
+import {GeneralActionsMixin} from '@/mixins/GeneralActionsMixin';
+import {GeneralGettersMixin} from '@/mixins/GeneralGettersMixin';
 
 @Component
-export default class App extends Vue {
+export default class App extends mixins(GeneralActionsMixin, GeneralGettersMixin) {
   private drawerVisible: boolean = false;
 
   Routes = Routes;
@@ -25,6 +26,10 @@ export default class App extends Vue {
     'Meredith Palmer',
     'Phyllis Lapin-Vance',
   ];
+
+  created() {
+    this.calculateDeviceSize(window.innerWidth);
+  }
 
   closeDrawer() {
     this.drawerVisible = false;
