@@ -4,7 +4,7 @@ import 'vue-material/dist/theme/default.css';
 // scripts
 import Vue from 'vue';
 import App from './App.vue';
-import router from './router';
+import router from './router/index';
 import Vuex from 'vuex';
 import axios from 'axios';
 // tslint:disable-next-line
