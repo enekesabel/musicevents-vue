@@ -1,21 +1,13 @@
-import {Component, Prop, Vue} from 'vue-property-decorator';
-import {IArtist} from '@s0me1/musicevents-core';
+import {Component} from 'vue-property-decorator';
 import {Routes} from '@/router/routes';
+import {mixins} from 'vue-class-component';
+import {ArtistMixin} from '@/mixins/ArtistMixin';
 
 @Component
-export default class ArtistListItem extends Vue {
-
-  @Prop({
-    required: true,
-  })
-  private artist!: IArtist;
+export default class ArtistListItem extends mixins(ArtistMixin) {
 
   onItemClick() {
     this.$router.push({name: Routes.ARTIST_DETAILS, params: {id: this.artist.id}});
-  }
-
-  onFavouriteClick() {
-    console.log('favourite click');
   }
 
 }
