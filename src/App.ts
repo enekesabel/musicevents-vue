@@ -1,9 +1,12 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import {Routes} from '@/router/routes';
 
 @Component
 export default class App extends Vue {
-  private menuVisible: boolean = false;
+  private drawerVisible: boolean = false;
+
+  Routes = Routes;
 
   selectedArtist = null;
   artists = [
@@ -20,6 +23,10 @@ export default class App extends Vue {
     'Toby Flenderson',
     'Stanley Hudson',
     'Meredith Palmer',
-    'Phyllis Lapin-Vance'
+    'Phyllis Lapin-Vance',
   ];
+
+  closeDrawer() {
+    this.drawerVisible = false;
+  }
 }

@@ -1,9 +1,9 @@
 <template>
-    <md-app md-waterfall md-mode="fixed-last">
+    <md-app md-waterfall md-mode="fixed-last" class="md-app">
         <md-app-toolbar class="md-dense md-primary">
             <div class="md-toolbar-row">
                 <div class="md-toolbar-section-start">
-                    <md-button class="md-icon-button d-sm-none" @click="menuVisible = !menuVisible">
+                    <md-button class="md-icon-button d-sm-none" @click="drawerVisible = !drawerVisible">
                         <md-icon>menu</md-icon>
                     </md-button>
 
@@ -41,22 +41,30 @@
 
             <div class="d-none d-sm-block">
                 <div class="md-toolbar-row">
-                    <md-tabs class="md-primary">
-                        <md-tab id="tab-home" md-label="My Artists"></md-tab>
-                        <md-tab id="tab-pages" md-label="My Events"></md-tab>
+                    <md-tabs class="md-primary" md-sync-route>
+                        <md-tab id="tab-home" md-label="Home" to="/"></md-tab>
+                        <md-tab id="tab-artists" md-label="My Artists" to="/artists"></md-tab>
+                        <md-tab id="tab-events" md-label="My Events" to="/events"></md-tab>
                     </md-tabs>
                 </div>
             </div>
         </md-app-toolbar>
 
-        <md-app-drawer :md-active.sync="menuVisible">
+        <md-app-drawer :md-active.sync="drawerVisible">
             <md-list>
-                <md-list-item>
+                <md-list-item :to="{name: Routes.HOME}"
+                              @click="closeDrawer">
+                    <md-icon>recent_actors</md-icon>
+                    <span class="md-list-item-text">Home</span>
+                </md-list-item>
+                <md-list-item :to="{name: Routes.ARTIST_LIST}"
+                              @click="closeDrawer">
                     <md-icon>recent_actors</md-icon>
                     <span class="md-list-item-text">My Artists</span>
                 </md-list-item>
 
-                <md-list-item>
+                <md-list-item :to="{name: Routes.EVENT_LIST}"
+                              @click="closeDrawer">
                     <md-icon>event_note</md-icon>
                     <span class="md-list-item-text">My Events</span>
                 </md-list-item>
@@ -64,55 +72,16 @@
         </md-app-drawer>
 
         <md-app-content>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.</p>
+            <router-view>
+            </router-view>
         </md-app-content>
     </md-app>
 </template>
 <script lang="ts" src="./App.ts"/>
 <style lang="scss">
     @import './assets/styles/index';
+
+    .md-app {
+        height: 100vh;
+    }
 </style>
