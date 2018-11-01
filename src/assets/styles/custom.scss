@@ -1,0 +1,24 @@
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+@import '~vue-material/src/components/MdLayout/variables';
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: $md-breakpoint-xsmall,
+        md: $md-breakpoint-small,
+        lg: $md-breakpoint-medium,
+        xl: $md-breakpoint-large,
+) !default;
+
+
+// Required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// Optional
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/grid";
