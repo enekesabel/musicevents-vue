@@ -1,7 +1,7 @@
 <template>
     <md-list-item @click="onItemClick">
         <md-avatar>
-            <img :src="artist.imageUrl" alt="Artist">
+            <img :src="artist.imageUrl" :alt="artist.name">
         </md-avatar>
 
         <div class="md-list-item-text">
