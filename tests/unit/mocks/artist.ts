@@ -11,7 +11,7 @@ export const generateArtists = (count: number) => {
       favourite: false,
       name: `Artist_${i}`,
       facebookPageUrl: `facebookPageUrl_${i}`,
-      imageUrl: `imageUrl_${i}`,
+      imageUrl: `https://placeimg.com/40/40/people/1/${i}`,
     };
     artists.push(artist);
   }
