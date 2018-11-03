@@ -16,8 +16,8 @@ export default new Router({
     },
     {
       path: '/artists',
-      name: Routes.ARTIST_LIST,
-      component: () => import('../views/artist_list/ArtistList.vue'),
+      name: Routes.FAVOURITE_ARTISTS,
+      component: () => import('../views/favourite_artists/FavouriteArtists.vue'),
     },
     {
       path: '/artists/:id',

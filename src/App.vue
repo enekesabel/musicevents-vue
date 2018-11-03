@@ -1,47 +1,7 @@
 <template>
     <md-app md-waterfall md-mode="fixed-last" class="md-app">
         <md-app-toolbar class="md-dense md-primary">
-            <div class="md-toolbar-row">
-                <div class="md-toolbar-section-start">
-                    <md-button v-if="isMobile"
-                               class="md-icon-button"
-                               @click="drawerVisible = !drawerVisible">
-                        <md-icon>menu</md-icon>
-                    </md-button>
-
-                    <span class="md-title">My Title</span>
-                </div>
-
-                <div class="md-toolbar-section-end">
-                    <div v-if="!isMobile"
-                         class="d-none d-sm-flex">
-                        <md-autocomplete
-                                class="search"
-                                v-model="selectedArtist"
-                                :md-options="artists"
-                                md-layout="box">
-                            <label>Search artists...</label>
-                            <md-icon class="mr-2">search</md-icon>
-                        </md-autocomplete>
-                    </div>
-                    <div v-if="isMobile">
-                        <md-menu md-size="big" md-direction="bottom-end">
-                            <md-button md-menu-trigger
-                                       class="md-icon-button">
-                                <md-icon>more_vert</md-icon>
-                            </md-button>
-
-                            <md-menu-content>
-                                <md-menu-item>
-                                    <span>Search artists</span>
-                                    <md-icon>search</md-icon>
-                                </md-menu-item>
-                            </md-menu-content>
-                        </md-menu>
-                    </div>
-                </div>
-            </div>
-
+            <main-toolbar-row v-model="drawerVisible"></main-toolbar-row>
             <div v-if="!isMobile"
                  class="md-toolbar-row">
                 <md-tabs class="md-primary" md-sync-route>
@@ -59,7 +19,7 @@
                     <md-icon>recent_actors</md-icon>
                     <span class="md-list-item-text">Home</span>
                 </md-list-item>
-                <md-list-item :to="{name: Routes.ARTIST_LIST}"
+                <md-list-item :to="{name: Routes.FAVOURITE_ARTISTS}"
                               @click="closeDrawer">
                     <md-icon>recent_actors</md-icon>
                     <span class="md-list-item-text">My Artists</span>
