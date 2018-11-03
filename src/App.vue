@@ -59,7 +59,7 @@
                     <md-icon>recent_actors</md-icon>
                     <span class="md-list-item-text">Home</span>
                 </md-list-item>
-                <md-list-item :to="{name: Routes.ARTIST_LIST}"
+                <md-list-item :to="{name: Routes.FAVOURITE_ARTISTS}"
                               @click="closeDrawer">
                     <md-icon>recent_actors</md-icon>
                     <span class="md-list-item-text">My Artists</span>

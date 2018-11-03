@@ -1,6 +1,6 @@
 export enum Routes {
   HOME = 'home',
-  ARTIST_LIST = 'artistList',
+  FAVOURITE_ARTISTS = 'favouriteArtists',
   ARTIST_DETAILS = 'artistDetails',
   EVENT_LIST = 'eventList',
 }
