@@ -1,7 +1,10 @@
 <template>
     <md-list v-if="isMobile">
-        <artist-list-item v-for="artist in artists"
-                          :artist="artist"></artist-list-item>
+        <template v-for="artist in artists">
+            <artist-list-item
+                    :artist="artist"></artist-list-item>
+            <md-divider class="md-inset"></md-divider>
+        </template>
     </md-list>
     <div class="md-layout" v-else>
         <div v-for="artist in artists"
