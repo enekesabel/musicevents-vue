@@ -1,5 +1,8 @@
 <template>
-    <md-card class="pointer"
+    <md-card class="pointer md-card"
+             @mouseenter.native="onMouseEnter"
+             @mouseleave.native="onMouseLeave"
+             :class="classObj"
              @click.native="onItemClick">
         <md-card-media-cover md-solid>
             <md-card-media md-ratio="16:9">
@@ -24,3 +27,11 @@
 
 <script lang="ts" src="./ArtistListCard.ts">
 </script>
+
+<style lang="scss" scoped>
+    @import "../../assets/styles/custom";
+
+    .md-card {
+        transition: $transition-base;
+    }
+</style>
