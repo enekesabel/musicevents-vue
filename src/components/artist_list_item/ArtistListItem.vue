@@ -9,10 +9,8 @@
             <span>{{artist.name}}</span>
         </div>
 
-        <md-button class="md-icon-button md-list-action"
-                   @click.stop="onFavouriteClick">
-            <md-icon class="md-primary">star</md-icon>
-        </md-button>
+        <artist-favourite-button :artist="artist">
+        </artist-favourite-button>
     </md-list-item>
 </template>
 

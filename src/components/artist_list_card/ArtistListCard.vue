@@ -15,10 +15,8 @@
                 </md-card-header>
 
                 <md-card-actions>
-                    <md-button class="md-icon-button"
-                               @click.stop="onFavouriteClick">
-                        <md-icon>favorite</md-icon>
-                    </md-button>
+                    <artist-favourite-button :artist="artist">
+                    </artist-favourite-button>
                 </md-card-actions>
             </md-card-area>
         </md-card-media-cover>
