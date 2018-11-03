@@ -9,8 +9,4 @@ export class ArtistMixin extends Vue {
   })
   protected artist!: IArtist;
 
-  onFavouriteClick() {
-    console.log('favourite click');
-  }
-
 }

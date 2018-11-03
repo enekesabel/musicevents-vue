@@ -16,7 +16,7 @@ export default class MainToolbarRow extends mixins(GeneralGettersMixin) {
   private drawerVisible: boolean = false;
 
   private localDrawerVisible: boolean = false;
-  private localSearchShown: boolean = false
+  private localSearchShown: boolean = false;
 
   get searchShown(): boolean {
     return !this.isMobile || this.localSearchShown;
@@ -29,6 +29,7 @@ export default class MainToolbarRow extends mixins(GeneralGettersMixin) {
   showSearch() {
     this.localSearchShown = true;
   }
+
   hideSearch() {
     this.localSearchShown = false;
   }
