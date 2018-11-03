@@ -1,5 +1,6 @@
 <template>
-    <md-list-item @click="onItemClick">
+    <md-list-item class="pointer"
+                  @click="onItemClick">
         <md-avatar>
             <img :src="artist.imageUrl" :alt="artist.name">
         </md-avatar>
