@@ -26,8 +26,8 @@ export default new Router({
     },
     {
       path: '/events',
-      name: Routes.EVENT_LIST,
-      component: () => import('../views/event_list/EventList.vue'),
+      name: Routes.FAVOURITE_EVENTS,
+      component: () => import('../views/favourite_events/FavouriteEvents.vue'),
     },
   ],
 });

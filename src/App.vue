@@ -25,7 +25,7 @@
                     <span class="md-list-item-text">My Artists</span>
                 </md-list-item>
 
-                <md-list-item :to="{name: Routes.EVENT_LIST}"
+                <md-list-item :to="{name: Routes.FAVOURITE_EVENTS}"
                               @click="closeDrawer">
                     <md-icon>event_note</md-icon>
                     <span class="md-list-item-text">My Events</span>
