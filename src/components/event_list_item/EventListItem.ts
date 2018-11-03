@@ -8,4 +8,8 @@ import EventFavouriteButton from '@/components/event_favourite_button/EventFavou
 })
 export default class EventListItem extends mixins(EventMixin) {
 
+  get description(): string | null {
+    return this.event.description && this.event.description.trim() !== '' ? this.event.description.trim() : null;
+  }
+
 }
