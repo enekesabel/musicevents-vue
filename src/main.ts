@@ -33,6 +33,9 @@ Vue.use(Vuex);
 library.add(faFacebookF);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
+// fix
+Vue.component('router-link', Vue.options.components['RouterLink']);
+
 // setting up api and store
 const axiosInstance = axios.create();
 const artistApi: IArtistApi = new DummyArtistApi(window.localStorage, new RemoteArtistApi(axiosInstance));
@@ -44,3 +47,4 @@ new Vue({
   store,
   render: h => h(App),
 }).$mount('#app');
+
