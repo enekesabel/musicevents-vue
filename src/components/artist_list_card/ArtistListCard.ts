@@ -18,6 +18,12 @@ export default class ArtistListCard extends mixins(ArtistMixin) {
     };
   }
 
+  get styleObj() {
+    return {
+      backgroundImage: `url(${this.artist.imageUrl})`,
+    };
+  }
+
   onItemClick() {
     this.$router.push({name: Routes.ARTIST_DETAILS, params: {id: this.artist.id}});
   }

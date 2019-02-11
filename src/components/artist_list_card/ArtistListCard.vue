@@ -5,8 +5,7 @@
              :class="classObj"
              @click.native="onItemClick">
         <md-card-media-cover md-solid>
-            <md-card-media md-ratio="16:9">
-                <img :src="artist.imageUrl" :alt="artist.name"/>
+            <md-card-media md-ratio="16:9" class="card-media-cover" :style="styleObj">
             </md-card-media>
 
             <md-card-area>
@@ -31,5 +30,10 @@
 
     .md-card {
         transition: $transition-base;
+
+        .card-media-cover{
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
     }
 </style>
