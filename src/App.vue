@@ -14,22 +14,24 @@
 
         <md-app-drawer :md-active.sync="drawerVisible">
             <md-list>
-                <md-list-item :to="{name: Routes.HOME}"
-                              @click="closeDrawer">
-                    <md-icon>recent_actors</md-icon>
+                <router-link tag="md-list-item"
+                             @click.native="closeDrawer"
+                             exact :to="{name: Routes.HOME}">
+                    <md-icon>home</md-icon>
                     <span class="md-list-item-text">Home</span>
-                </md-list-item>
-                <md-list-item :to="{name: Routes.FAVOURITE_ARTISTS}"
-                              @click="closeDrawer">
+                </router-link>
+                <router-link tag="md-list-item"
+                             @click.native="closeDrawer"
+                             exact :to="{name: Routes.FAVOURITE_ARTISTS}">
                     <md-icon>recent_actors</md-icon>
-                    <span class="md-list-item-text">My Artists</span>
-                </md-list-item>
-
-                <md-list-item :to="{name: Routes.FAVOURITE_EVENTS}"
-                              @click="closeDrawer">
+                    <span class="md-list-item-text">Favourite artists</span>
+                </router-link>
+                <router-link tag="md-list-item"
+                             @click.native="closeDrawer"
+                             exact :to="{name: Routes.FAVOURITE_EVENTS}">
                     <md-icon>event_note</md-icon>
-                    <span class="md-list-item-text">My Events</span>
-                </md-list-item>
+                    <span class="md-list-item-text">Favourite events</span>
+                </router-link>
             </md-list>
         </md-app-drawer>
 
