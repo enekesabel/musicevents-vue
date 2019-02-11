@@ -34,7 +34,7 @@ library.add(faFacebookF);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 // fix
-Vue.component('router-link', Vue.options.components['RouterLink']);
+Vue.component('router-link', (Vue as any).options.components['RouterLink']);
 
 // setting up api and store
 const axiosInstance = axios.create();
@@ -47,4 +47,3 @@ new Vue({
   store,
   render: h => h(App),
 }).$mount('#app');
-
