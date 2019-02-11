@@ -5,8 +5,7 @@
              :class="classObj"
              @click.native="onItemClick">
         <md-card-media-cover md-solid>
-            <md-card-media md-ratio="16:9">
-                <img :src="artist.imageUrl" :alt="artist.name"/>
+            <md-card-media md-ratio="16:9" :style="styleObj">
             </md-card-media>
 
             <md-card-area>
