@@ -18,6 +18,7 @@ import {
 import {createStore} from '@/store/createStore';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faFacebookF} from '@fortawesome/free-brands-svg-icons';
+import {Services} from '@/Services';
 
 const FontAwesomeIcon = require('@fortawesome/vue-fontawesome').FontAwesomeIcon;
 // tslint:disable-next-line
@@ -34,7 +35,7 @@ library.add(faFacebookF);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 // fix
-Vue.component('router-link', Vue.options.components['RouterLink']);
+Vue.component('router-link', (Vue as any).options.components['RouterLink']);
 
 // setting up api and store
 const axiosInstance = axios.create();
@@ -45,6 +46,9 @@ const store = createStore(artistApi, eventApi);
 new Vue({
   router,
   store,
+  provide: {
+    [Services.ARTIST_API]: artistApi,
+    [Services.EVENT_API]: eventApi,
+  },
   render: h => h(App),
 }).$mount('#app');
-

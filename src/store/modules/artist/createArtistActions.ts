@@ -28,7 +28,7 @@ export const createArtistActions: (artistApi: IArtistApi) => IArtistActions = (a
   },
   async unmarkFavourite({commit}, artist: IArtist): Promise<void> {
     try {
-      await artistApi.markFavourite(artist.id);
+      await artistApi.unmarkFavourite(artist.id);
       commit(ArtistMutation.SET_ARTIST, new Artist({
         ...artist.serialize(),
         favourite: false,
