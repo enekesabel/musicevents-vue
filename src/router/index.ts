@@ -22,6 +22,7 @@ export default new Router({
     {
       path: '/artists/:id',
       name: Routes.ARTIST_DETAILS,
+      props: true,
       component: () => import('../views/artist_details/ArtistDetails.vue'),
     },
     {
