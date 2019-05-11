@@ -3,7 +3,7 @@ import {Routes} from '@/router/routes';
 import Vue from 'vue';
 import {Inject} from 'vue-property-decorator';
 import {Services} from '@/Services';
-import {ArtistSearchOptions, IArtistApi} from '@s0me1/musicevents-core';
+import {IArtist, IArtistApi} from '@s0me1/musicevents-core';
 
 @Component
 export default class ArtistSearch extends Vue {
@@ -16,11 +16,15 @@ export default class ArtistSearch extends Vue {
   Routes = Routes;
 
   private selectedArtistName = '';
-  private artists: ArtistSearchOptions[] = [];
+  private artists: IArtist[] = [];
   private renderAutocomplete: boolean = true;
 
   get artistNames(): string[] {
     return this.artists.map(a => a.name);
+  }
+
+  get selectedArtist(): IArtist | null {
+    return this.artists.find(a => a.name === this.selectedArtistName) || null;
   }
 
   async searchArtists(query: string) {
@@ -31,13 +35,11 @@ export default class ArtistSearch extends Vue {
     this.artists = await this.artistApi.search(query);
   }
 
-  async onSearchEntrySelected(e: any) {
-    const selectedArtist = (await this.artistApi.find(e))[0];
-    if (!selectedArtist) {
+  async onSearchEntrySelected() {
+    if (!this.selectedArtist) {
       return;
     }
-
-    this.$router.push({name: Routes.ARTIST_DETAILS, params: {id: selectedArtist.id}});
+    this.$router.push({name: Routes.ARTIST_DETAILS, params: {id: this.selectedArtist.id}});
 
     // trick: autocomplet needs to be rerendered to capture clicks again
     this.$nextTick(() => {
