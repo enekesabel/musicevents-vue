@@ -4,7 +4,7 @@
             <template v-for="artist in artists">
                 <artist-list-item
                         :artist="artist"></artist-list-item>
-                <md-divider class="md-inset"></md-divider>
+                <md-divider></md-divider>
             </template>
         </md-list>
         <div class="md-layout" v-else>
