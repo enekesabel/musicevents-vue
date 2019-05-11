@@ -18,8 +18,8 @@
 
                         </md-card-header>
 
-                        <md-card-content>
-                            <div class="d-flex flex-row align-items-center justify-content-center">
+                        <md-card-actions>
+                            <div class="w-100 d-flex flex-row align-items-center justify-content-center">
                                 <md-button v-if="artist.facebookPageUrl"
                                            :href="artist.facebookPageUrl"
                                            target="_blank"
@@ -30,6 +30,12 @@
                                     </md-icon>
                                 </md-button>
                             </div>
+                        </md-card-actions>
+                        <md-card-content>
+                            <div class="md-subheading mb-3">
+                                Upcoming events
+                            </div>
+                            <event-list :events="events"/>
                         </md-card-content>
                     </md-card-area>
                 </md-card>
