@@ -12,7 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.14",
     "@fortawesome/free-brands-svg-icons": "^5.7.1",
     "@fortawesome/vue-fontawesome": "^0.1.5",
-    "@s0me1/musicevents-core": "^1.0.8",
+    "@s0me1/musicevents-core": "^1.0.10",
     "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
     "vue": "^2.6.5",
