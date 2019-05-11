@@ -42,12 +42,12 @@ export default class ArtistSearch extends Vue {
     this.$router.push({name: Routes.ARTIST_DETAILS, params: {id: this.selectedArtist.id}});
 
     // trick: autocomplet needs to be rerendered to capture clicks again
-    this.$nextTick(() => {
+    setTimeout(() => {
       this.renderAutocomplete = false;
       this.$nextTick(() => {
         this.renderAutocomplete = true;
       });
-    });
+    }, 100);
   }
 
 }
