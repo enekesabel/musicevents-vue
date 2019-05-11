@@ -34,7 +34,7 @@
         </md-app-drawer>
 
         <md-app-content>
-            <router-view>
+            <router-view :key="$route.fullPath">
             </router-view>
         </md-app-content>
     </md-app>
