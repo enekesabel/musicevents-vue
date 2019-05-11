@@ -13,6 +13,10 @@ export default class ArtistFavouriteButton extends mixins(ArtistMixin, ArtistMod
     return this.localFavourite ? 'favorite' : 'favorite_border';
   }
 
+  get tooltip(): string {
+    return this.localFavourite ? 'Remove from favourites' : 'Add to favourites';
+  }
+
   onClick() {
     if (this.localFavourite) {
       this.unmarkFavourite(this.artist);

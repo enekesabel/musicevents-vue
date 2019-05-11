@@ -6,7 +6,15 @@ import {EventMixin} from '@/mixins/EventMixin';
 export default class EventFavouriteButton extends mixins(EventMixin) {
 
   get icon(): string {
-    return this.event.favourite ? 'star' : 'star_border';
+    return this.isFavourite ? 'star' : 'star_border';
+  }
+
+  get isFavourite(): boolean {
+    return this.event.favourite;
+  }
+
+  get tooltip(): string {
+    return this.isFavourite ? 'Remove from favourites' : 'Add to favourites';
   }
 
   onClick() {
