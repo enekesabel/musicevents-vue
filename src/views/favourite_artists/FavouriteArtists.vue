@@ -1,7 +1,7 @@
 <template>
     <md-content>
         <md-subheader>Favourite artists</md-subheader>
-        <artist-list :artists="artists"></artist-list>
+        <artist-list :artists="favouriteArtists"></artist-list>
     </md-content>
 </template>
 

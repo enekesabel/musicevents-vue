@@ -12,7 +12,7 @@ export class ArtistModuleMixin extends Vue {
 
   @Getter('favouriteArtists', {namespace}) favouriteArtists!: IArtist[];
 
-  @Action('fetchArtists', {namespace}) fetchArtists!: Promise<void>;
+  @Action('fetchArtists', {namespace}) fetchArtists!: () => Promise<void>;
   @Action('markFavourite', {namespace}) markFavourite!: (artist: IArtist) => Promise<void>;
   @Action('unmarkFavourite', {namespace}) unmarkFavourite!: (artist: IArtist) => Promise<void>;
 
