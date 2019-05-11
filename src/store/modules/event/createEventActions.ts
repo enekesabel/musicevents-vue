@@ -25,7 +25,7 @@ export const createEventActions: (eventApi: IEventApi) => IEventActions = (event
   },
   async unmarkFavourite({commit}, event: IEvent): Promise<void> {
     try {
-      await eventApi.markFavourite(event.id);
+      await eventApi.unmarkFavourite(event.id);
       commit(EventMutation.SET_EVENT, new Event({
         ...event.serialize(),
         favourite: false,
