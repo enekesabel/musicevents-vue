@@ -19,6 +19,7 @@ import {createStore} from '@/store/createStore';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faFacebookF} from '@fortawesome/free-brands-svg-icons';
 import {Services} from '@/Services';
+import '@/utils/filters';
 
 const FontAwesomeIcon = require('@fortawesome/vue-fontawesome').FontAwesomeIcon;
 // tslint:disable-next-line
