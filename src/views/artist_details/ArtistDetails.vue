@@ -1,6 +1,11 @@
 <template>
     <div class="md-layout md-alignment-center-center">
-        <template v-if="artist">
+        <template v-if="error">
+            <div class="md-body-2 text-danger w-100 text-center my-5">
+                Artist not found.
+            </div>
+        </template>
+        <template v-else-if="artist">
             <div class="md-layout-item md-xsmall-size-100 md-small-size-80 md-medium-size-60 md-large-size-40 md-xlarge-size-30">
                 <md-card>
                     <md-card-area md-inset>
