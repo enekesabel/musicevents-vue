@@ -21,11 +21,16 @@ export default class ArtistDetails extends Vue {
 
   private artist: IArtist | null = null;
   private events: IEvent[] = [];
+  private error: boolean = false;
 
   async created() {
-    this.artist = await this.artistApi.get(this.id);
-    if (this.artist) {
-      this.events = await this.eventApi.find(this.artist);
+    try {
+      this.artist = await this.artistApi.get(this.id);
+      if (this.artist) {
+        this.events = await this.eventApi.find(this.artist);
+      }
+    } catch (e) {
+      this.error = true;
     }
   }
 }
